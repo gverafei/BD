@@ -80,10 +80,10 @@ SELECT * FROM pieza;
 DELETE FROM categoria WHERE id=1;
 UPDATE categoria SET id=4 WHERE id=1;
 ```
-+ ¿Podríamos borrar la **Categoría A** de la tabla **categoria**?
-+ ¿Qué le ocurre a las piezas que pertenecen la **Categoría A** después de borrarla?
 + ¿Podríamos actualizar la **Categoría A** de la tabla **categoria**?
 + ¿Qué le ocurre a las piezas que pertenecen la **Categoría A** después de actualizarla?
++ ¿Podríamos borrar la **Categoría A** de la tabla **categoria**?
++ ¿Qué le ocurre a las piezas que pertenecen la **Categoría A** después de borrarla?
 
 ### Base de datos proveedores
 Ejemplo 3:
@@ -123,10 +123,10 @@ DELETE FROM categoria WHERE id=1;
 DELETE FROM categoria WHERE id=3;
 UPDATE categoria SET id=4 WHERE id=1;
 ```
-+ ¿Podríamos borrar la **Categoría A** de la tabla **categoria**?
-+ ¿Qué le ocurre a las piezas que pertenecen la **Categoría A** después de borrarla?
 + ¿Podríamos actualizar la **Categoría A** de la tabla **categoria**?
 + ¿Qué le ocurre a las piezas que pertenecen la **Categoría A** después de actualizarla?
++ ¿Podríamos borrar la **Categoría A** de la tabla **categoria**?
++ ¿Qué le ocurre a las piezas que pertenecen la **Categoría A** después de borrarla?
 
 ## Autor
 
