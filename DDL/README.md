@@ -74,6 +74,11 @@ INSERT INTO pieza VALUES (1, 'Pieza 1', 'Blanco', 25.90, 1);
 INSERT INTO pieza VALUES (2, 'Pieza 2', 'Verde', 32.75, 1);
 INSERT INTO pieza VALUES (3, 'Pieza 3', 'Rojo', 12.00, 2);
 INSERT INTO pieza VALUES (4, 'Pieza 4', 'Azul', 24.50, 2);
+
+SELECT * FROM categoria;
+SELECT * FROM pieza;
+DELETE FROM categoria WHERE id=1;
+UPDATE categoria SET id=4 WHERE id=1;
 ```
 + ¿Podríamos borrar la **Categoría A** de la tabla **categoria**?
 + ¿Qué le ocurre a las piezas que pertenecen la **Categoría A** después de borrarla?
@@ -111,6 +116,12 @@ INSERT INTO pieza VALUES (1, 'Pieza 1', 'Blanco', 25.90, 1);
 INSERT INTO pieza VALUES (2, 'Pieza 2', 'Verde', 32.75, 1);
 INSERT INTO pieza VALUES (3, 'Pieza 3', 'Rojo', 12.00, 2);
 INSERT INTO pieza VALUES (4, 'Pieza 4', 'Azul', 24.50, 2);
+
+SELECT * FROM categoria;
+SELECT * FROM pieza;
+DELETE FROM categoria WHERE id=1;
+DELETE FROM categoria WHERE id=3;
+UPDATE categoria SET id=4 WHERE id=1;
 ```
 + ¿Podríamos borrar la **Categoría A** de la tabla **categoria**?
 + ¿Qué le ocurre a las piezas que pertenecen la **Categoría A** después de borrarla?
