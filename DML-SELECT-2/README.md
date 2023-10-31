@@ -1,7 +1,7 @@
 # Consultas SQL sobre varias tablas.
 Prácticas en clase Base de datos
 
-```
+
 ### Base de datos tienda
 ```
 DROP DATABASE IF EXISTS tienda;
