@@ -14,7 +14,7 @@ CREATE TABLE alumno (
   apellido2 VARCHAR(100),
   fecha_nacimiento DATE NOT NULL,
   es_repetidor ENUM('sí', 'no') NOT NULL,
-  teléfono VARCHAR(9)
+  telefono VARCHAR(9)
 );
 
 INSERT INTO alumno VALUES(1, 'María', 'Sánchez', 'Pérez', '1990-12-01', 'no', NULL);
