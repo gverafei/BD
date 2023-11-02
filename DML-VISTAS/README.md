@@ -16,7 +16,7 @@ CREATE TABLE cliente (
   categoría INT UNSIGNED
 );
 
-CREATE TABLE comercial (
+CREATE TABLE vendedor (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   nombre VARCHAR(100) NOT NULL,
   apellido1 VARCHAR(100) NOT NULL,
@@ -29,9 +29,9 @@ CREATE TABLE pedido (
   total DOUBLE NOT NULL,
   fecha DATE,
   id_cliente INT UNSIGNED NOT NULL,
-  id_comercial INT UNSIGNED NOT NULL,
+  id_vendedor INT UNSIGNED NOT NULL,
   FOREIGN KEY (id_cliente) REFERENCES cliente(id),
-  FOREIGN KEY (id_comercial) REFERENCES comercial(id)
+  FOREIGN KEY (id_vendedor) REFERENCES vendedor(id)
 );
 
 INSERT INTO cliente VALUES(1, 'Aarón', 'Rivero', 'Gómez', 'Almería', 100);
@@ -45,14 +45,14 @@ INSERT INTO cliente VALUES(8, 'Pepe', 'Ruiz', 'Santana', 'Huelva', 200);
 INSERT INTO cliente VALUES(9, 'Guillermo', 'López', 'Gómez', 'Granada', 225);
 INSERT INTO cliente VALUES(10, 'Daniel', 'Santana', 'Loyola', 'Sevilla', 125);
 
-INSERT INTO comercial VALUES(1, 'Daniel', 'Sáez', 'Vega', 0.15);
-INSERT INTO comercial VALUES(2, 'Juan', 'Gómez', 'López', 0.13);
-INSERT INTO comercial VALUES(3, 'Diego','Flores', 'Salas', 0.11);
-INSERT INTO comercial VALUES(4, 'Marta','Herrera', 'Gil', 0.14);
-INSERT INTO comercial VALUES(5, 'Antonio','Carretero', 'Ortega', 0.12);
-INSERT INTO comercial VALUES(6, 'Manuel','Domínguez', 'Hernández', 0.13);
-INSERT INTO comercial VALUES(7, 'Antonio','Vega', 'Hernández', 0.11);
-INSERT INTO comercial VALUES(8, 'Alfredo','Ruiz', 'Flores', 0.05);
+INSERT INTO vendedor VALUES(1, 'Daniel', 'Sáez', 'Vega', 0.15);
+INSERT INTO vendedor VALUES(2, 'Juan', 'Gómez', 'López', 0.13);
+INSERT INTO vendedor VALUES(3, 'Diego','Flores', 'Salas', 0.11);
+INSERT INTO vendedor VALUES(4, 'Marta','Herrera', 'Gil', 0.14);
+INSERT INTO vendedor VALUES(5, 'Antonio','Carretero', 'Ortega', 0.12);
+INSERT INTO vendedor VALUES(6, 'Manuel','Domínguez', 'Hernández', 0.13);
+INSERT INTO vendedor VALUES(7, 'Antonio','Vega', 'Hernández', 0.11);
+INSERT INTO vendedor VALUES(8, 'Alfredo','Ruiz', 'Flores', 0.05);
 
 INSERT INTO pedido VALUES(1, 150.5, '2017-10-05', 5, 2);
 INSERT INTO pedido VALUES(2, 270.65, '2016-09-10', 1, 5);
