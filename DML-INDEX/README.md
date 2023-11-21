@@ -1,6 +1,22 @@
 # Índices de datos SQL.
 Prácticas en clase Base de datos
 
+### Creación de índices
+```
+DROP TABLE IF EXISTS cliente;
+CREATE TABLE cliente (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(50) NOT NULL,
+  email VARCHAR(15) NOT NULL UNIQUE,
+  telefono VARCHAR(9) NOT NULL,
+  INDEX idx_nombre (nombre)
+);
+
+DESCRIBE cliente;
+
+SHOW INDEXES FROM cliente \G;
+```
+
 ### Base de datos netflix
 ```
 DROP DATABASE IF EXISTS netflix;
