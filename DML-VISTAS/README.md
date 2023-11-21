@@ -29,8 +29,6 @@ SHOW FULL TABLES WHERE table_type = 'VIEW';
 
 ### Base de datos netflix
 ```
-### Base de datos netflix
-```
 DROP DATABASE IF EXISTS netflix;
 CREATE DATABASE netflix CHARACTER SET utf8mb4;
 USE netflix;
