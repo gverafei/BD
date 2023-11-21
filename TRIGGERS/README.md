@@ -3,46 +3,12 @@ Prácticas en clase Base de datos
 
 ### Ejemplo 1
 ```
-DROP PROCEDURE IF EXISTS listar_peliculas;
-DELIMITER $$
-CREATE PROCEDURE listar_peliculas(IN id_genero INT)
-BEGIN
-  SELECT * FROM pelicula WHERE pelicula.id_genero=id_genero;
-END $$ 
-DELIMITER ;
 
-SHOW PROCEDURE STATUS WHERE db = 'netflix' \G;
 ```
 
 ### Ejemplo 2
 ```
-DROP PROCEDURE IF EXISTS contar_peliculas;
-DELIMITER $$
-CREATE PROCEDURE contar_peliculas(IN id_genero INT, OUT total INT)
-BEGIN
-  SET total = (SELECT COUNT(*) FROM pelicula WHERE pelicula.id_genero=id_genero);
-END $$ 
-DELIMITER ;
 
-CALL contar_peliculas(2, @total);
-SELECT @total;
-SHOW PROCEDURE STATUS WHERE db = 'netflix' \G;
-```
-
-### Ejemplo 3
-```
-DROP PROCEDURE IF EXISTS calcular_max_min_media;
-DELIMITER $$
-CREATE PROCEDURE calcular_max_min_media (OUT maximo DECIMAL(7, 2), OUT minimo DECIMAL(7, 2), OUT media DECIMAL(7, 2))
-BEGIN
-SET maximo = (SELECT MAX(precio) FROM pelicula);
-SET minimo = (SELECT MIN(precio) FROM pelicula);
-SET media = (SELECT AVG(precio) FROM pelicula);
-END $$ 
-DELIMITER ;
-
-CALL calcular_max_min_media(@maximo, @minimo, @media);
-SELECT @maximo, @minimo, @media;
 ```
 
 ### Base de datos netflix
