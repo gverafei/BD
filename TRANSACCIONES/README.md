@@ -42,17 +42,19 @@ SELECT * FROM cliente;
 DROP DATABASE IF EXISTS test;
 CREATE DATABASE test CHARACTER SET utf8mb4;
 USE test;
-CREATE TABLE cliente (
-	id INT UNSIGNED PRIMARY KEY,
-	nombre CHAR (20)
+
+CREATE TABLE cuentas (
+    id INTEGER UNSIGNED PRIMARY KEY,
+    saldo DECIMAL(11,2) CHECK (saldo >= 0)
 );
 
-START TRANSACTION;
-INSERT INTO cliente VALUES (1, 'Pepe');
-COMMIT;
+INSERT INTO cuentas VALUES (1, 1000);
+INSERT INTO cuentas VALUES (2, 2000);
+INSERT INTO cuentas VALUES (3, 0);
 
--- 1. ¿Qué devolverá esta consulta?
-SELECT * FROM cliente;
+-- 1. Consultamos el estado actual de las cuentas
+SELECT * FROM cuentas;
+
 
 -- 2. Suponga que queremos realizar una transferencia de dinero entre dos cuentas bancarias con la siguiente transacción:
 SET AUTOCOMMIT=0;
