@@ -2,7 +2,7 @@
 Prácticas en clase Base de datos
 
 ### Ejemplo 1
-```
+```sql
 DROP DATABASE IF EXISTS test;
 CREATE DATABASE test CHARACTER SET utf8mb4;
 USE test;
@@ -54,7 +54,7 @@ SELECT * FROM cuentas;
 ```
 
 ### Ejemplo 2
-```
+```sql
 DROP DATABASE IF EXISTS test;
 CREATE DATABASE test CHARACTER SET utf8mb4;
 USE test;

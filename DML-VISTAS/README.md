@@ -31,6 +31,7 @@ SHOW FULL TABLES WHERE table_type = 'VIEW';
 
 ### Renombrar vistas
 Cambiarle el nombre a la vista resumen_peliculas a listado_peliculas.
+
 ```sql
 RENAME TABLE resumen_peliculas TO listado_peliculas;
 SHOW FULL TABLES;
@@ -38,6 +39,7 @@ SHOW FULL TABLES;
 
 ### Eliminar vistas
 Cambiarle el nombre a la vista resumen_peliculas a listado_peliculas.
+
 ```sql
 RENAME TABLE resumen_peliculas TO listado_peliculas;
 SHOW FULL TABLES;
