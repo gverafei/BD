@@ -3,7 +3,7 @@ Prácticas en clase Base de datos
 
 ### Base de datos proveedores
 Ejemplo 1:
-```
+```sql
 DROP DATABASE IF EXISTS proveedores;
 CREATE DATABASE proveedores CHARSET utf8mb4;
 USE proveedores;
@@ -45,7 +45,7 @@ UPDATE categoria SET id=4 WHERE id=1;
 
 ### Base de datos proveedores
 Ejemplo 2:
-```
+```sql
 DROP DATABASE IF EXISTS proveedores;
 CREATE DATABASE proveedores CHARSET utf8mb4;
 USE proveedores;
@@ -87,7 +87,7 @@ UPDATE categoria SET id=4 WHERE id=1;
 
 ### Base de datos proveedores
 Ejemplo 3:
-```
+```sql
 DROP DATABASE IF EXISTS proveedores;
 CREATE DATABASE proveedores CHARSET utf8mb4;
 USE proveedores;
@@ -128,7 +128,3 @@ UPDATE categoria SET id=4 WHERE id=1;
 + ¿Podríamos borrar la **Categoría A** de la tabla **categoria**?
 + ¿Qué le ocurre a las piezas que pertenecen la **Categoría A** después de borrarla?
 
-## Autor
-
-Desarrollo de Sistemas Web  
-Universidad Veracruzana

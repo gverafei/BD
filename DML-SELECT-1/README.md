@@ -2,7 +2,7 @@
 Prácticas en clase Base de datos
 
 ### Base de datos instituto
-```
+```sql
 DROP DATABASE IF EXISTS instituto;
 CREATE DATABASE instituto CHARACTER SET utf8mb4;
 USE instituto;
@@ -29,7 +29,7 @@ INSERT INTO alumno VALUES(9, 'Manuel', 'Domínguez', 'Hernández', '1999-07-08',
 INSERT INTO alumno VALUES(10, 'Daniel', 'Moreno', 'Ruiz', '1998-02-03', 'no', NULL);
 ```
 ### Base de datos tienda
-```
+```sql
 DROP DATABASE IF EXISTS tienda;
 CREATE DATABASE tienda CHARACTER SET utf8mb4;
 USE tienda;
@@ -48,7 +48,7 @@ INSERT INTO ventas VALUES (5, 6, 9.99);
 ```
 
 ### Base de datos company
-```
+```sql
 DROP DATABASE IF EXISTS company;
 CREATE DATABASE company CHARACTER SET utf8mb4;
 USE company;
@@ -70,7 +70,7 @@ INSERT INTO offices VALUES (22, 'Denver', 'Western', 108, 300000, 186042);
 ```
 
 ### Base de datos google
-```
+```sql
 DROP DATABASE IF EXISTS google;
 CREATE DATABASE google CHARACTER SET utf8mb4;
 USE google;
@@ -98,8 +98,3 @@ INSERT INTO resultado VALUES (13, 'Resultado 13', 'Descripción 13', 'http://...
 INSERT INTO resultado VALUES (14, 'Resultado 14', 'Descripción 14', 'http://....');
 INSERT INTO resultado VALUES (15, 'Resultado 15', 'Descripción 15', 'http://....');
 ```
-
-## Autor
-
-Desarrollo de Sistemas Web  
-Universidad Veracruzana

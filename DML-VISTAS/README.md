@@ -1,8 +1,9 @@
 # Vistas de datos SQL.
 Prácticas en clase Base de datos
 
-### Ejemplo 1 de Vistas
-```
+### Crear vistas. Ejemplo 1
+Ejercicio: Crear una vista llamada resumen_peliculas que muestre para cada película, el id, el titulo, el nombre del genero, el nombre de su clasificacion y el precio.
+```sql
 CREATE OR REPLACE VIEW resumen_peliculas AS 
   SELECT pelicula.id, pelicula.titulo, genero.nombre AS genero, clasificacion.nombre AS clasificacion, pelicula.precio 
   FROM 
@@ -15,8 +16,9 @@ SELECT * FROM resumen_peliculas;
 SHOW FULL TABLES;
 ```
 
-### Ejemplo 2 de Vistas
-```
+### Crear vistas. Ejemplo 2
+Crear una vista llamada resumen_peliculas que muestre para cada película, el id, el titulo, el nombre del genero, el nombre de su clasificacion y el precio. Colocar los alias en la clausula de creación.
+```sql
 CREATE OR REPLACE VIEW resumen_peliculas (id, titulo, genero, clasificacion, precio) AS 
 SELECT pelicula.id, pelicula.titulo, genero.nombre, clasificacion.nombre, pelicula.precio 
 FROM 
@@ -27,8 +29,24 @@ SELECT * FROM resumen_peliculas;
 SHOW FULL TABLES WHERE table_type = 'VIEW';
 ```
 
-### Práctica con Vistas
+### Renombrar vistas
+Cambiarle el nombre a la vista resumen_peliculas a listado_peliculas.
+```sql
+RENAME TABLE resumen_peliculas TO listado_peliculas;
+SHOW FULL TABLES;
 ```
+
+### Eliminar vistas
+Cambiarle el nombre a la vista resumen_peliculas a listado_peliculas.
+```sql
+RENAME TABLE resumen_peliculas TO listado_peliculas;
+SHOW FULL TABLES;
+```
+
+### Práctica con Vistas
+1. Escriba una vista que se llame listado_pedidos_clientes que muestre un listado donde aparezcan todos los clientes y los pedidos que ha realizado cada uno de ellos. La vista deberá tener las siguientes columnas: nombre y apellidos del cliente concatenados, ciudad, id del pedido, fecha del pedido y la cantidad total del pedido.
+
+```sql
 -- Ejercicio 1
 CREATE OR REPLACE VIEW listado_pedidos_clientes (cliente_id, cliente, ciudad, pedido_id, fecha, total) AS 
   SELECT c.id, CONCAT_WS(' ', c.nombre, c.apellido1, c.apellido2), ciudad, p.id, p.fecha, p.total 
@@ -40,8 +58,9 @@ SELECT * FROM listado_pedidos_clientes;
 -- Listamos las listas creadas
 SHOW FULL TABLES WHERE table_type = 'VIEW';
 ```
+2. Escriba una vista que se llame listado_pedidos_vendedores que muestre un listado donde aparezcan todos los vendedores y los pedidos que han vendido cada uno de ellos. La vista deberá tener las siguientes columnas: nombre y apellidos del vendedor concatenados, id del pedido, fecha del pedido, la cantidad total del pedido y el calculo de su comisión (pedido.total * vendedor.comision).
 
-```
+```sql
 -- Ejercicio 2
 CREATE OR REPLACE VIEW listado_pedidos_vendedores (vendedor_id, vendedor, pedido_id, fecha, total, comision) AS 
   SELECT v.id, CONCAT_WS(' ', v.nombre, v.apellido1, v.apellido2), p.id, p.fecha, p.total, TRUNCATE(p.total*v.comision,2) 
@@ -53,38 +72,43 @@ SELECT * FROM listado_pedidos_vendedores;
 -- Listamos las listas creadas
 SHOW FULL TABLES WHERE table_type = 'VIEW';
 ```
+3. Utilice las vistas que ha creado en los pasos anteriores para devolver un listado de los clientes de la ciudad de Almería que han realizado pedidos.
 
-```
+```sql
 -- Ejercicio 3
 SELECT * FROM listado_pedidos_clientes WHERE ciudad='Almería';
 ```
+4. Utilice las vistas que ha creado en los pasos anteriores para calcular el número de pedidos que se ha realizado cada uno de los clientes.
 
-```
+```sql
 -- Ejercicio 4
 SELECT cliente_id, cliente, COUNT(*) FROM listado_pedidos_clientes GROUP BY cliente_id;
 ```
+5. Utilice las vistas que ha creado en los pasos anteriores para calcular el valor del pedido máximo y mínimo que ha realizado cada cliente.
 
-```
+```sql
 -- Ejercicio 5
 SELECT cliente_id, cliente, MAX(total), MIN(total) FROM listado_pedidos_clientes GROUP BY cliente_id;
 ```
+6. Modifique el nombre de las vista listado_pedidos_clientes y asígnele el nombre listado_de_pedidos.
 
-```
+```sql
 -- Ejercicio 6
 RENAME TABLE listado_pedidos_clientes TO listado_pedidos;
 
 -- Listamos las listas creadas
 SHOW FULL TABLES WHERE table_type = 'VIEW';
 ```
+7. Elimine las vistas que ha creado en los pasos anteriores. 
 
-```
+```sql
 -- Ejercicio 7
 DROP VIEW listado_pedidos;
 DROP VIEW listado_pedidos_vendedores;
 ```
 
 ### Base de datos netflix
-```
+```sql
 DROP DATABASE IF EXISTS netflix;
 CREATE DATABASE netflix CHARACTER SET utf8mb4;
 USE netflix;
@@ -137,7 +161,7 @@ INSERT INTO pelicula (id_genero, id_clasificacion, titulo, sinopsis, precio) VAL
 ```
 
 ### Base de datos ventas
-```
+```sql
 DROP DATABASE IF EXISTS ventas;
 CREATE DATABASE ventas CHARACTER SET utf8mb4;
 USE ventas;

@@ -2,7 +2,7 @@
 Prácticas en clase Base de datos
 
 ### Base de datos empleados
-```
+```sql
 DROP DATABASE IF EXISTS empleados;
 CREATE DATABASE empleados CHARACTER SET utf8mb4;
 USE empleados;
@@ -47,7 +47,7 @@ INSERT INTO empleado VALUES(12, '41234836R', 'Irene','Salas', 'Flores', NULL);
 INSERT INTO empleado VALUES(13, '82635162B', 'Juan Antonio','Sáez', 'Guerrero', NULL);
 ```
 ### Base de datos tienda
-```
+```sql
 DROP DATABASE IF EXISTS tienda;
 CREATE DATABASE tienda CHARACTER SET utf8mb4;
 USE tienda;

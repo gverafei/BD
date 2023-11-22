@@ -2,7 +2,7 @@
 Prácticas en clase Base de datos
 
 ### Base de datos cursos
-```
+```sql
 DROP DATABASE IF EXISTS cursos;
 CREATE DATABASE cursos CHARACTER SET utf8mb4;
 USE cursos;

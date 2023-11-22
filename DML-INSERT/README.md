@@ -2,7 +2,7 @@
 Prácticas en clase Base de datos
 
 ### Base de datos netflix
-```
+```sql
 DROP DATABASE IF EXISTS netflix;
 CREATE DATABASE netflix CHARACTER SET utf8mb4;
 USE netflix;
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS pelicula (
 
 ```
 ### Base de datos tienda
-```
+```sql
 DROP DATABASE IF EXISTS tienda;
 CREATE DATABASE tienda CHARACTER SET utf8mb4;
 USE tienda;

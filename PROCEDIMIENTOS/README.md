@@ -2,7 +2,12 @@
 Prácticas en clase Base de datos
 
 ### Ejemplo 1
-```
+Escriba un procedimiento llamado `listar_peliculas` que reciba como entrada el `id` de la categoria y muestre un listado de todos las películas que existen dentro de esa categoria.
+
+Este procedimiento no devuelve ningún parámetro de salida, lo que hace es mostrar el listado de los productos.
+
+
+```sql
 DROP PROCEDURE IF EXISTS listar_peliculas;
 DELIMITER $$
 CREATE PROCEDURE listar_peliculas(IN id_genero INT)
@@ -11,11 +16,17 @@ BEGIN
 END $$ 
 DELIMITER ;
 
+-- Para la lista de procedimientos
 SHOW PROCEDURE STATUS WHERE db = 'netflix' \G;
+
+-- Para llamar al procedimiento
+CALL listar_peliculas(2);
 ```
 
 ### Ejemplo 2
-```
+Escriba un procedimiento llamado `calcular_max_min_media` que devuelva como salida tres parámetros. El precio máximo, el precio mínimo y la media de las peliculas que existen en esa categoria.
+
+```sql
 DROP PROCEDURE IF EXISTS contar_peliculas;
 DELIMITER $$
 CREATE PROCEDURE contar_peliculas(IN id_genero INT, OUT total INT)
@@ -24,13 +35,17 @@ BEGIN
 END $$ 
 DELIMITER ;
 
+-- Para la lista de procedimientos
+SHOW PROCEDURE STATUS WHERE db = 'netflix' \G;
+
+-- Para llamar al procedimiento
 CALL contar_peliculas(2, @total);
 SELECT @total;
-SHOW PROCEDURE STATUS WHERE db = 'netflix' \G;
 ```
 
 ### Ejemplo 3
-```
+Escriba un procedimiento llamado `calcular_max_min_media` que devuelva como salida tres parámetros. El precio máximo, el precio mínimo y la media de las peliculas que existen en esa categoria.
+```sql
 DROP PROCEDURE IF EXISTS calcular_max_min_media;
 DELIMITER $$
 CREATE PROCEDURE calcular_max_min_media (OUT maximo DECIMAL(7, 2), OUT minimo DECIMAL(7, 2), OUT media DECIMAL(7, 2))
@@ -41,12 +56,13 @@ SET media = (SELECT AVG(precio) FROM pelicula);
 END $$ 
 DELIMITER ;
 
+-- Para llamar al procedimiento
 CALL calcular_max_min_media(@maximo, @minimo, @media);
 SELECT @maximo, @minimo, @media;
 ```
 
 ### Base de datos netflix
-```
+```sql
 DROP DATABASE IF EXISTS netflix;
 CREATE DATABASE netflix CHARACTER SET utf8mb4;
 USE netflix;
