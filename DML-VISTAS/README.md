@@ -2,7 +2,7 @@
 Prácticas en clase Base de datos
 
 ### Crear vistas. Ejemplo 1
-Ejercicio: Crear una vista llamada resumen_peliculas que muestre para cada película, el id, el titulo, el nombre del genero, el nombre de su clasificacion y el precio.
+Ejercicio: Crear una vista llamada `resumen_peliculas` que muestre para cada película, el id, el titulo, el nombre del genero, el nombre de su clasificacion y el precio.
 ```sql
 CREATE OR REPLACE VIEW resumen_peliculas AS 
   SELECT pelicula.id, pelicula.titulo, genero.nombre AS genero, clasificacion.nombre AS clasificacion, pelicula.precio 
@@ -17,7 +17,7 @@ SHOW FULL TABLES;
 ```
 
 ### Crear vistas. Ejemplo 2
-Crear una vista llamada resumen_peliculas que muestre para cada película, el id, el titulo, el nombre del genero, el nombre de su clasificacion y el precio. Colocar los alias en la clausula de creación.
+Crear una vista llamada `resumen_peliculas` que muestre para cada película, el id, el titulo, el nombre del genero, el nombre de su clasificacion y el precio. Colocar los alias en la clausula de creación.
 ```sql
 CREATE OR REPLACE VIEW resumen_peliculas (id, titulo, genero, clasificacion, precio) AS 
 SELECT pelicula.id, pelicula.titulo, genero.nombre, clasificacion.nombre, pelicula.precio 
@@ -30,7 +30,7 @@ SHOW FULL TABLES WHERE table_type = 'VIEW';
 ```
 
 ### Renombrar vistas
-Cambiarle el nombre a la vista resumen_peliculas a listado_peliculas.
+Cambiarle el nombre a la vista `resumen_peliculas` a `listado_peliculas`.
 
 ```sql
 RENAME TABLE resumen_peliculas TO listado_peliculas;
@@ -38,15 +38,16 @@ SHOW FULL TABLES;
 ```
 
 ### Eliminar vistas
-Cambiarle el nombre a la vista resumen_peliculas a listado_peliculas.
+Elimine la vista llamada resumen_peliculas.
 
 ```sql
-RENAME TABLE resumen_peliculas TO listado_peliculas;
+DROP VIEW IF EXISTS resumen_peliculas;
+
 SHOW FULL TABLES;
 ```
 
 ### Práctica con Vistas
-1. Escriba una vista que se llame listado_pedidos_clientes que muestre un listado donde aparezcan todos los clientes y los pedidos que ha realizado cada uno de ellos. La vista deberá tener las siguientes columnas: nombre y apellidos del cliente concatenados, ciudad, id del pedido, fecha del pedido y la cantidad total del pedido.
+1. Escriba una vista que se llame `listado_pedidos_clientes` que muestre un listado donde aparezcan todos los clientes y los pedidos que ha realizado cada uno de ellos. La vista deberá tener las siguientes columnas: nombre y apellidos del cliente concatenados, ciudad, id del pedido, fecha del pedido y la cantidad total del pedido.
 
 ```sql
 -- Ejercicio 1

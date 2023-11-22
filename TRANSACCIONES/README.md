@@ -2,7 +2,7 @@
 Prácticas en clase Base de datos
 
 ### Ejemplo 1
-START TRANSACTION, COMMIT y ROLLBACK
+`START TRANSACTION`, `COMMIT` y `ROLLBACK`
 ```sql
 -- 0. Crear la base de datos
 DROP DATABASE IF EXISTS test;
@@ -35,7 +35,7 @@ SELECT * FROM cliente;
 ```
 
 ### Ejemplo 2
-START TRANSACTION, COMMIT y ROLLBACK
+`START TRANSACTION`, `COMMIT` y `ROLLBACK`
 
 ```sql
 -- 0. Crear la base de datos
@@ -90,7 +90,7 @@ SELECT * FROM cuentas;
 ```
 
 ### Ejemplo 3
-SAVEPOINT, ROLLBACK TO SAVEPOINT
+`SAVEPOINT`, `ROLLBACK TO` savepoint
 
 ```sql
 -- 0. Crear la base de datos

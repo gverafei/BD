@@ -2,7 +2,7 @@
 Prácticas en clase Base de datos
 
 ### Ejemplo 1
-1. Crea una base de datos llamada test que contenga una tabla llamada alumnos.
+1. Crea una base de datos llamada `test` que contenga una tabla llamada `alumnos`.
 1. Una vez creada la tabla escriba dos triggers con las siguientes características:
     - Trigger 1: `trigger_check_nota_before_insert`
       - Se ejecuta sobre la tabla alumnos.
