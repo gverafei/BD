@@ -72,6 +72,9 @@ SELECT cliente_id, cliente, MAX(total), MIN(total) FROM listado_pedidos_clientes
 ```
 -- Ejercicio 6
 RENAME TABLE listado_pedidos_clientes TO listado_pedidos;
+
+-- Listamos las listas creadas
+SHOW FULL TABLES WHERE table_type = 'VIEW';
 ```
 
 ```
