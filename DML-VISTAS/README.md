@@ -1,7 +1,7 @@
 # Vistas de datos SQL.
 Prácticas en clase Base de datos
 
-### Ejercicios de Vistas
+### Ejemplo 1 de Vistas
 ```
 CREATE OR REPLACE VIEW resumen_peliculas AS 
   SELECT pelicula.id, pelicula.titulo, genero.nombre AS genero, clasificacion.nombre AS clasificacion, pelicula.precio 
@@ -15,7 +15,7 @@ SELECT * FROM resumen_peliculas;
 SHOW FULL TABLES;
 ```
 
-### Ejercicios de Vistas
+### Ejemplo 2 de Vistas
 ```
 CREATE OR REPLACE VIEW resumen_peliculas (id, titulo, genero, clasificacion, precio) AS 
 SELECT pelicula.id, pelicula.titulo, genero.nombre, clasificacion.nombre, pelicula.precio 
@@ -25,6 +25,59 @@ INNER JOIN clasificacion ON pelicula.id_clasificacion=clasificacion.id
 ORDER BY pelicula.titulo;
 SELECT * FROM resumen_peliculas;
 SHOW FULL TABLES WHERE table_type = 'VIEW';
+```
+
+### Práctica con Vistas
+```
+-- Ejercicio 1
+CREATE OR REPLACE VIEW listado_pedidos_clientes (cliente_id, cliente, ciudad, pedido_id, fecha, total) AS 
+  SELECT c.id, CONCAT_WS(' ', c.nombre, c.apellido1, c.apellido2), ciudad, p.id, p.fecha, p.total 
+  FROM cliente c INNER JOIN pedido p ON c.id=p.id_cliente;
+
+-- Verificamos el resultado de la Vista
+SELECT * FROM listado_pedidos_clientes;
+
+-- Listamos las listas creadas
+SHOW FULL TABLES WHERE table_type = 'VIEW';
+```
+
+```
+-- Ejercicio 2
+CREATE OR REPLACE VIEW listado_pedidos_vendedores (vendedor_id, vendedor, pedido_id, fecha, total, comision) AS 
+  SELECT v.id, CONCAT_WS(' ', v.nombre, v.apellido1, v.apellido2), p.id, p.fecha, p.total, TRUNCATE(p.total*v.comision,2) 
+  FROM vendedor v INNER JOIN pedido p ON v.id=p.id_vendedor;
+
+-- Verificamos el resultado de la Vista
+SELECT * FROM listado_pedidos_vendedores;
+
+-- Listamos las listas creadas
+SHOW FULL TABLES WHERE table_type = 'VIEW';
+```
+
+```
+-- Ejercicio 3
+SELECT * FROM listado_pedidos_clientes WHERE ciudad='Almería';
+```
+
+```
+-- Ejercicio 4
+SELECT cliente_id, cliente, COUNT(*) FROM listado_pedidos_clientes GROUP BY cliente_id;
+```
+
+```
+-- Ejercicio 5
+SELECT cliente_id, cliente, MAX(total), MIN(total) FROM listado_pedidos_clientes GROUP BY cliente_id;
+```
+
+```
+-- Ejercicio 6
+RENAME TABLE listado_pedidos_clientes TO listado_pedidos;
+```
+
+```
+-- Ejercicio 7
+DROP VIEW listado_pedidos;
+DROP VIEW listado_pedidos_vendedores;
 ```
 
 ### Base de datos netflix
