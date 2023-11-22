@@ -3,6 +3,39 @@ Prácticas en clase Base de datos
 
 ### Ejemplo 1
 ```sql
+-- 0. Crear la base de datos
+DROP DATABASE IF EXISTS test;
+CREATE DATABASE test CHARACTER SET utf8mb4;
+USE test;
+CREATE TABLE cliente (
+	id INT UNSIGNED PRIMARY KEY,
+	nombre CHAR (20)
+);
+
+START TRANSACTION;
+INSERT INTO cliente VALUES (1, 'Pepe');
+COMMIT;
+
+-- 1. ¿Qué devolverá esta consulta?
+SELECT * FROM cliente;
+
+SET AUTOCOMMIT=0;
+INSERT INTO cliente VALUES (2, 'Maria');
+INSERT INTO cliente VALUES (20, 'Juan');
+DELETE FROM cliente WHERE nombre = 'Pepe';
+
+-- 2. ¿Qué devolverá esta consulta?
+SELECT * FROM cliente;
+
+ROLLBACK;
+
+-- 3. ¿Qué devolverá esta consulta?
+SELECT * FROM cliente;
+```
+
+### Ejemplo 2
+```sql
+-- 0. Crear la base de datos
 DROP DATABASE IF EXISTS test;
 CREATE DATABASE test CHARACTER SET utf8mb4;
 USE test;
@@ -53,8 +86,9 @@ ROLLBACK;
 SELECT * FROM cuentas;
 ```
 
-### Ejemplo 2
+### Ejemplo 3
 ```sql
+-- 0. Crear la base de datos
 DROP DATABASE IF EXISTS test;
 CREATE DATABASE test CHARACTER SET utf8mb4;
 USE test;
