@@ -24,7 +24,7 @@ CALL listar_peliculas(2);
 ```
 
 ### Ejemplo 2
-Escriba un procedimiento llamado `calcular_max_min_media` que devuelva como salida tres parámetros. El precio máximo, el precio mínimo y la media de las peliculas que existen en esa categoria.
+Escriba un procedimiento llamado `contar_peliculas` que reciba como entrada el id de la categoria y devuelva el número de películas que existen dentro de esa categoria.
 
 ```sql
 DROP PROCEDURE IF EXISTS contar_peliculas;
