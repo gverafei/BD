@@ -77,7 +77,8 @@ UPDATE alumnos SET nota = 9.5 WHERE id = 3;
 SELECT * FROM alumnos;
 ```
 
-### Ejemplo 2
+### Ejemplo 2 Triggers y procedimientos almacenados
+
 1. Crea una base de datos llamada `test` que contenga una tabla llamada `alumnos` con las siguientes columnas.
 Tabla alumnos:
     - id (entero sin signo)
