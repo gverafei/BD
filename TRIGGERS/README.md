@@ -1,4 +1,4 @@
-# Procedimientos almacenados SQL.
+# Disparadores en MySQL.
 Prácticas en clase Base de datos
 
 ### Ejemplo 1
